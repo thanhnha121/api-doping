@@ -7,13 +7,11 @@ import mainCenter from './mainCenter/mainCenter';
 import mainRight from './mainRight/mainRight';
 
 let homeModule = angular.module('home', [
-  uiRouter,
-  mainLeft,
-  mainCenter,
-  mainRight,
-])
-
-
+    uiRouter,
+    mainLeft,
+    mainCenter,
+    mainRight,
+  ])
   .config(($stateProvider, $urlRouterProvider) => {
     "ngInject";
 

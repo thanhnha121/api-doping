@@ -1,5 +1,37 @@
 <div class="uk-padding-small">
-  <div class="uk-box-shadow-medium uk-height-1-1">
+  <div class="uk-height-1-1 uk-align-center" >
+
+  	<form>
+  	    <fieldset class="uk-fieldset">
+  	        <legend class="uk-legend">Url</legend>
+
+  	        <div class="uk-margin url" uk-margin>
+                <div uk-form-custom="target: true">
+                    <input class="uk-input" 
+                    	ng-model="$ctrl.url" type="text" 
+                    	placeholder="http://example.com" />
+                </div>
+                <button class="uk-button uk-button-default" ng-click="$ctrl.submit()">Submit</button>
+            </div>
+
+  	        <legend class="uk-legend">K = {{$ctrl.currentImgResized.k}}</legend>
+  	        <legend class="uk-legend">Time = {{$ctrl.currentImgResized.time === undefined ? $ctrl.currentImgResized.k : $ctrl.currentImgResized.time + 's'}}</legend>
+  	    </fieldset>
+  	</form>
+
+    <div id="img-diff">
+      <img ng-src="{{$ctrl.url}}" />
+      <img ng-src="{{$ctrl.currentImgResized.url}}" />
+    </div>
     
+	<ul class="uk-thumbnav uk-padding-small" uk-margin>
+        <li class="{{$ctrl.currentImgResized.k == rs.k ? 'uk-active' : ''}}" 
+        	ng-click="$ctrl.onChangeDiff(rs)"
+        	ng-repeat="rs in $ctrl.results track by $index"
+        	><a href="#"><img ng-src="{{rs.url}}" width="120" alt=""><span>K = {{rs.k}}</span></a></li>
+	</ul>
+
+    <div uk-spinner ng-show="$ctrl.loading" class="loading-icon">Running...</div>
+
   </div>
 </div>

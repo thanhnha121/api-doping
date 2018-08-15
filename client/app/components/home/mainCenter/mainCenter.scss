@@ -3,4 +3,44 @@ main-center {
     margin-left: 250px;
     min-height: calc(100vh - 80px);
     display: block;
+
+    .loading-icon {
+    	> svg {
+    		float: left;
+    		margin-top: -15px;
+    		margin-right: 10px;
+    	}
+    }
+
+    form {
+    	.url {
+    		.uk-form-custom {
+    			width: 100%;
+    			width: calc(100% - 155px);
+    		}
+    		input {
+    		}
+
+    		button {
+    			width: 150px; 
+    			height: 40px;
+    		}
+    	}
+    }
+
+    ul.uk-thumbnav {
+    	text-align: center;
+    	a {
+    		position: relative;
+    		text-align: center;
+    		> span {
+    			bottom: -25px;
+    			width: 120px;
+	    		position: absolute;
+	    		z-index: 1;
+	    		left: 0;
+	    		text-align: center;
+	    	}
+    	}
+    }
 }
